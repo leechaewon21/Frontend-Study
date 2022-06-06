@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="ToDoList.css">
+</head>
+<body>
+    <div class="whole">
+        <!--header-->
+        <div class="header">
+            <!--login-->
+            <form class="login hidden">
+                <input type="text" placeholder="Your Name?"/>
+                <button>✔️</button> 
+            </form>
+            <!--greeting-->
+            <h1 class="greeting hidden"></h1>
+        </div>
+        <!--main-->
+        <div class="main">
+            <!--left-->
+            <div class="left">
+                <!--weather-->
+                <div id="weather">
+                    <span></span>
+                    <span></span>
+                </div>
+                <!--clock-->
+                <div id="clock">
+                    <h2>00:00:00</h2>
+                </div>
+                <!--quote-->
+                <div id="quote">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!--right-->
+            <div class="right">
+                <!--todo-->
+                <div id="todobox">
+                    <form id="todo">
+                        <input type="text" placeholder="Your To-Do List?">
+                        <button>✏️</button>
+                    </form>
+                    <ul id="todolist"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="greeting.js"></script>
+    <script src="clock.js"></script>
+    <script src="quotes.js"></script>
+    <script src="todo.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>

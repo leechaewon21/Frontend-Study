@@ -1,0 +1,196 @@
+
+@font-face {
+    font-family : 'typo';
+    src: url('./fonts/typo.ttf');
+}
+
+@font-face {
+    font-family : 'comic';
+    src: url('./fonts/comic.ttf');
+}
+
+html,body {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+}
+
+.whole {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left {
+    flex-basis: 60%;
+    height:100%;
+    word-wrap: break-word;
+}
+
+.right {
+    flex-basis: 40%;
+    height: 100%;
+}
+
+.login input {
+    width: 200px;
+    height: 30px;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    
+    font-size: 20px;
+    font-family: 'comic';
+}
+
+.login button {
+    background: none;
+    border:none;
+
+    font-size:20px;
+}
+
+.greeting {
+    color: black;
+    font-family: 'comic';
+    font-size: 50px;
+}
+
+#weather {
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    color: black;
+    font-family: 'comic';
+    font-size:20px;
+}
+
+#clock {
+    width: 100%;
+    height: 30%;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#clock h2{
+    margin:0;
+
+    color: black;
+    font-family: 'typo';
+    font-size:100px;
+}
+
+#quote {
+    width: 100%;
+    height: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align:center;
+    
+    color: black;
+    font-family: 'comic';
+    font-size:20px;
+}
+
+#todobox {
+    width: auto;
+    height: 70%; /*모르겠다*/
+    margin: 10px 50px;
+    padding: 30px 30px;
+    border: 2px black solid;
+    text-align: center;
+}
+
+#todo input {
+    width: 200px;
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    
+    font-size: 20px;
+    font-family: 'comic';
+}
+
+#todo button {
+    background: none;
+    border:none;
+    font-size:20px;
+}
+
+#todolist::-webkit-scrollbar {
+    width:7px;
+}
+
+
+#todolist::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+#todolist::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+#todolist {
+    width: max-content;
+    height: 70%; /*모르겠다*/
+    margin: 50px auto;
+    overflow-y: scroll;
+}
+
+#todolist li{
+    list-style: none;
+    text-align: start;
+}
+
+#todolist span {
+    border-bottom: 2px solid black;
+    font-family: comic;
+    font-size: 20px;
+    color: black;
+}
+
+#todolist button{
+    background: none;
+    border:none;
+    font-size:10px;
+}
+
+.hidden {
+    display:none;
+}
