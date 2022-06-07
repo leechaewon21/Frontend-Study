@@ -1,15 +1,16 @@
-import React from "react";
-import ReactDom from "react-dom"
+import React from "react"
+import {createRoot} from "react-dom/client"
+import {App} from "./App"
 
-var root = document.getElementById("root");
+const container = document.getElementById("container");
+const root = createRoot(container); 
 
 function Test() {
     return(
         <div>
-            <h1>TEST - CRA 없이 React App 만들기</h1>
-            <p>by Chaewon</p>
+            <h1>TEST - To Do List React App</h1>
         </div>
-    )
+    );
 }
 
-ReactDom.render(<Test/>,root);
+root.render(<App/>);
