@@ -8,6 +8,31 @@ class TodoList extends React.Component {
     }
 }
 
+class TodoOne extends React.Component {
+
+    checkTodo() {
+        const checkedTodo = document.querySelector("#"+this.props.id);
+        const checkedBtn = document.querySelector("#"+this.props.id+" input");
+
+        if(checkedTodo.style.color == "black") {
+            checkedTodo.style.color = "grey";
+            checkedBtn.value = "❎";
+        } else {
+            checkedTodo.style.color = "black";
+            checkedBtn.value = "✅";
+        }
+    }
+
+    render() {
+        return(
+            <li id={this.props.id} style={{color: "black"}}>
+                <input type="button" value="✅" onClick={()=>{this.checkTodo()}}></input>
+                {this.props.text}
+            </li>  
+        );
+    }
+}
+
 export class Todo extends React.Component {
 
     constructor(props) {
@@ -22,10 +47,12 @@ export class Todo extends React.Component {
     addTodo() {
         const inputText = document.getElementById("inputText");
         if(inputText.value) {
-            const temp = [this.state.todos];
-            temp.push(<li>{inputText.value}</li>);
+            const temp = this.state.todos;
+            temp.push(<TodoOne
+                id={"todo-"+temp.length}
+                text={inputText.value}/>);
             this.setState({
-                todoNum : temp.length,
+                todoNum: temp.length,
                 todos: temp
             });
             inputText.value="";
