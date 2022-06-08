@@ -12,7 +12,7 @@ class TodoOne extends React.Component {
 
     checkTodo() {
         const selectedTodo = document.querySelector("#"+this.props.id);
-        const selectedBtn = document.querySelector("#"+this.props.id+" input");
+        const selectedBtn = document.querySelector("#"+this.props.id+" #checkTodoBtn");
 
         if(selectedTodo.style.color == "black") {
             selectedTodo.style.color = "grey";
@@ -26,8 +26,8 @@ class TodoOne extends React.Component {
     render() {
         return(
             <li id={this.props.id} style={{color: "black"}}>
-                <input type="button" value="✅" onClick={()=>{this.checkTodo()}}></input>
-                <input type="button" value="❌" onClick={()=>{this.props.delete(this.props.id)}}></input>
+                <input id="checkTodoBtn" type="button" value="✅" onClick={()=>{this.checkTodo()}}></input>
+                <input id="deleteTodoBtn" type="button" value="❌" onClick={()=>{this.props.delete(this.props.id)}}></input>
                 {this.props.text}
             </li>  
         );
@@ -40,7 +40,7 @@ export class Todo extends React.Component {
         super(props);
 
         this.state = {
-            todoNum: 0,
+            index: 0,
             todos: []
         };
     }
@@ -55,14 +55,17 @@ export class Todo extends React.Component {
         if(inputText.value) {
             const temp = this.state.todos;
             temp.push(<TodoOne
-                id={"todo-"+temp.length}
+                key={this.state.index.toString()}
+                id={"todo-"+this.state.index}
                 text={inputText.value}
-                delete={(todoID)=>this.deleteTodo(todoID)}/>);
+                delete={(todoID)=>this.deleteTodo(todoID)}
+                />);
             this.setState({
-                todoNum: temp.length,
+                index: this.state.index+1,
                 todos: temp
             });
             inputText.value="";
+            console.log("todo-"+this.state.index);
         }
     }
 
