@@ -1,8 +1,11 @@
 package com.chaewon.board.repository;
 
 import com.chaewon.board.domain.Member;
+import org.springframework.stereotype.Repository;
+
 import java.util.*;
 
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Integer, Member> store = new HashMap<>();
     private static int sequence = 0;
