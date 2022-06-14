@@ -15,7 +15,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findByID(int id) {
+    public Optional<Member> findById(int id) {
         return Optional.ofNullable(store.get(id));
     }
 
@@ -30,6 +30,7 @@ public class MemoryMemberRepository implements MemberRepository{
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
+
 
     public void clearStore() {
         store.clear();
