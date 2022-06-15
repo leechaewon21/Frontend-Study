@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAB</title>
+    <link rel="stylesheet" href="../css/tab.css" type="text/css"/>
+</head>
+<body>
+    <header>
+        <h1 id = tab_count> Tab Count : 0 </h1>
+        <nav id = tab_menu>
+            <button class="tab_btn clicked" data-id="tab1">TAB1</button>
+            <button class="tab_btn" data-id="tab2">TAB2</button>
+            <button class="tab_btn" data-id="tab3">TAB3</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="tab1" class="tab_cont">
+            <h2 class="tab_title">TAB1 TITLE</h2>
+            <div class="tab_text">
+                TAB1 TEXT
+            </div>
+        </div>
+        <div id="tab2" class="tab_cont hidden">
+            <h2 class="tab_title">TAB2 TITLE</h2>
+            <div class="tab_text">
+                TAB2 TEXT
+            </div>
+        </div>
+        <div id="tab3" class="tab_cont hidden">
+            <h2 class="tab_title">TAB3 TITLE</h2>
+            <div class="tab_text">
+                TAB3 TEXT
+            </div>
+        </div>
+    </main>
+    <script src="../js/tab.js"></script>
+</body>
+</html>
