@@ -5,8 +5,29 @@
         <title>WebRTC Study</title>
     </head>
     <body>
-        <h1>My Camera</h1>
-        <video id="localVideo" autoplay playsinline controls=false></video>
-        <script type="text/javascript" src="../js/client.js"></script>
+        <!--stream-->
+        <video id="localVideo" height="200" width="300" autoplay></video>
+
+        <!--chat send-->
+        <form action="">
+            <input id="message"/>
+            <input type="submit"></button>
+        </form>
+
+        <!--chat show-->
+        <ul id="messages"></ul>
+
+        <!--record-->
+        <video id="recordVideo" height="200" width="300" autoplay></video> 
+        <div>
+            <button id="recordButton">Start Recording</button>  
+            <button id="playButton">Play Recording</button>
+        </div>
+
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/script/clientRecord.js"></script>
+        <script src="/script/clientChat.js"></script>
+        <script src="/script/clientStream.js"></script>
     </body>
 </html>
