@@ -1,8 +1,6 @@
-### _FrontStudying_
+### _FrontStudying : Study about Html, CSS, JS, React_
 
 ```bash
-Study about Front-end
-
 ├── html : HTML files
 ├── css : CSS files (connect with HTML files)  
 ├── js : Javascript files (connect with HTML files)        
@@ -16,11 +14,9 @@ Study about Front-end
 
 
 <br></br>
-### _NodeWebRTC_
+### _NodeWebRTC : Study WebRTC, Socket in Node.js_
 
 ```bash
-Study WebRTC, Socket in Node.js
-
 ├── html : HTML files for client
 ├── js : Javascript files for client's HTML files      
 └── server.js : Javascript file for Server
@@ -34,11 +30,9 @@ Study WebRTC, Socket in Node.js
 
 
 <br></br>
-### _ReactSpringBoard_
+### _ReactSpringBoard : Toy Web Proejct with React&Spring_
 
 ```bash
-Toy Web Proejct with React&Spring
-
 ReactSpringBoard : Spring Proejct
   └── src-main-frontend : React Project
 ``` 
@@ -49,11 +43,7 @@ ReactSpringBoard : Spring Proejct
 
 
 <br></br>
-### _ReactTodo_
-
-```bash
-Toy Web Proejct with React
-``` 
+### _ReactTodo : Toy Web Proejct with React_
 
 ###### Content
 - [X] Create React App without create-react-app
@@ -61,11 +51,7 @@ Toy Web Proejct with React
 
 
 <br></br>
-### _VanillaTodo_
-
-```bash
-Toy Web Proejct with Vanila Javascript
-``` 
+### _VanillaTodo : Toy Web Proejct with Vanila Javascript_
 
 ###### Content
 - [X] Create TodoList function
