@@ -1,39 +1,68 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import {Link} from "react-router-dom";
 
 export default function EnrollMember() {
+//STATE
     const [memberName, setMemberName] = useState("");
+    const [memberId,setMemberId] = useState("");
+    const [memberPassword, setMemberPassword] = useState("");
+    const [successMessage, setSuccessMessage] = useState("Nothing...");
 
-
-    function handleChange(event) {
+//EVENT HANDLER
+    function handleChangeName(event) {
         setMemberName(event.target.value);
+    }
+
+    function handleChangeId(event) {
+        setMemberId(event.target.value);
+    }
+
+    function handleChangePassword(event) {
+        setMemberPassword(event.target.value);
     }
 
     function handleSubmit(event) {
 
         event.preventDefault();
 
-        //POST
-        axios.post('/api/enroll_member',{name: memberName})
+        //POST REQUEST
+        axios.post('/api/enroll_member',{name: memberName, id: memberId, password: memberPassword})
         .then(function(response) {
-            console.log(response.data);
+            setSuccessMessage("[SUCCESS ENROLL MEMBER] "+Object.values(response.data));
         })
         .catch(function(error) {
-            console.log(error);
+            setSuccessMessage("[FAIL ENROLL MEMBER] "+error);
         })
         .finally(function() {
-            document.location.href="/";
+            setMemberName("");
+            setMemberId("");
+            setMemberPassword("");
         })
     }
 
-
+// VIEW
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Member Name :
-                <input type="text" value={memberName} onChange={handleChange} />
-            </label>
-            <input type="submit" value="Submit"/>
-        </form>
+        <div>
+            <Link to = "/">홈으로</Link>
+
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Member Name :
+                    <input type="text" value={memberName} onChange={handleChangeName} />
+                </label>
+                <label>
+                    Member Id :
+                    <input type="text" value={memberId} onChange={handleChangeId} />
+                </label>
+                <label>
+                    Member Password :
+                    <input type="text" value={memberPassword} onChange={handleChangePassword} />
+                </label>
+                <input type="submit" value="Submit"/>
+            </form>
+
+            <p>[RESPONSE] {successMessage}</p>
+        </div>
     );
 }

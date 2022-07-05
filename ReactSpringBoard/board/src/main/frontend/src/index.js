@@ -11,7 +11,8 @@ import App from './App';
 import EnrollMember from "./routes/EnrollMember";
 import SearchMember from "./routes/SearchMember";
 import ListMember from "./routes/ListMember";
-
+import Login from "./routes/Login"
+import Library from "./routes/Library"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,8 @@ root.render(
         <Route path="/enroll_member" element={<EnrollMember />} />
         <Route path="/search_member" element={<SearchMember />} />
         <Route path="/list_member" element={<ListMember />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/library" element={<Library />} />
     </Routes>
   </BrowserRouter>
 );

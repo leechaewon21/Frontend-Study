@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-public class firstController {
+public class FirstController {
 
     static class Hello {
         private String name;

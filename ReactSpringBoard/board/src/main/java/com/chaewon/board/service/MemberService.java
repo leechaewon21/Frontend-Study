@@ -12,6 +12,7 @@ import java.util.Optional;
 //@Service
 public class MemberService {
 
+
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
 
     private final MemberRepository memberRepository;
@@ -20,22 +21,24 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public int join(Member member) {
+    public long join(Member member) { //회원가입
         validateDuplicateMember(member);
         memberRepository.save(member);
-        return member.getId();
+        return member.getIndex();
     }
 
     public List<Member> findAllMembers() {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOneMember(int memberID) {
-        return memberRepository.findById(memberID);
+    public List<Member> findMemberByName(String name) {return memberRepository.findByName(name);}
+
+    public Optional<Member> findOneMemberById(String id) {
+        return memberRepository.findById(id);
     }
 
-    private void validateDuplicateMember(Member member) { //이름이 같은지 체크
-        memberRepository.findByName(member.getName())
+    private void validateDuplicateMember(Member member) { //아이디가 같은지 체크
+        memberRepository.findById(member.getId())
                 .ifPresent( m -> {
                     throw new IllegalStateException("이미 존재하는 회원");
                 });

@@ -10,6 +10,8 @@ function App() {
             <Link to="/enroll_member">회원등록</Link>
             <Link to="/search_member">회원검색</Link>
             <Link to="/list_member">회원목록</Link>
+            <Link to="/login">로그인</Link>
+            <Link to="/library">도서관</Link>
         </nav>
     </div>
   );
